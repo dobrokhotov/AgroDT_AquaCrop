@@ -1,0 +1,13 @@
+     7.0       : AquaCrop Version (June 2021)
+
+     3.0       : Shape factor for water stress coefficient for canopy senescence (0.0 = straight line)
+    50         : Sum(ETo) during dormant period to be exceeded before crop is permanently wilted
+
+
+    90         : dry matter content (%) of fresh yield
+     0.00      : Minimum effective rooting depth (m) in first year - required only in case of regrowth
+     0         : Crop is transplanted in 1st year - required only in case of regrowth
+     0         : Transfer of assimilates from above ground parts to root system is NOT considered
+     0         : Number of days at end of season during which assimilates are stored in root system
+     0         : Percentage of assimilates, transferred to root system at last day of season
+     0         : Percentage of stored assimilates, transferred to above ground parts in next season
