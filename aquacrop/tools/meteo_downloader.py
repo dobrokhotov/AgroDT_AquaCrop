@@ -7,6 +7,7 @@ def get_nasa_power_meteo_data(latitude,
                               date_start,
                               date_end,
                               output='.',
+                              filename='nasa_power.json',
                               meteo_parameters='T2M,T2M_MAX,T2M_MIN,WS2M,PS,RH2M,PRECTOT,ALLSKY_SFC_SW_DWN'):
     '''
     Function gets meteorological data from nasapower reanalysis: https://power.larc.nasa.gov/#resources
@@ -15,6 +16,7 @@ def get_nasa_power_meteo_data(latitude,
     :param date_start: meteo time series start date (yyyymmdd)
     :param date_end: meteo time series end date (yyyymmdd)
     :param output: path to save meteo time series .json file
+    :param filename: meteo time series json file name
     :param meteo_parameters: meteorological parameters variables names to download (designation for AG community)
     :return: filename
     '''
@@ -30,10 +32,6 @@ def get_nasa_power_meteo_data(latitude,
 
     content = json.loads(response.content.decode('utf-8'))
 
-    filename = 'nasa_power_{date_start}_{date_end}_{latitude}_{longitude}.json'.format(longitude=longitude,
-                                                                                       latitude=latitude,
-                                                                                       date_start=date_start,
-                                                                                       date_end=date_end)
     filepath = os.path.join(output, filename)
 
     with open(filepath, 'w') as file_object:
